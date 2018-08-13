@@ -25,7 +25,7 @@ describe('isPalindrome', function () {
   ];
 
   palindromes.forEach(function (str) {
-    it(`its "${str}" a palindrome?`, function () {
+    it(`is "${str}" a palindrome?`, function () {
       expect(isPalindrome(str)).to.be.true;
     });
   });
