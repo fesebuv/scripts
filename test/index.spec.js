@@ -1,16 +1,36 @@
 const { expect } = require('chai');
-const { fib } = require('../src/');
+const { fib, isPalindrome } = require('../src/');
 
 describe('fibonacci test', function () {
-  it('fib of 10', function () {
-    expect(fib(10)).to.equal(55);
+  const fibNums = {
+    10: 55,
+    55: 139583862445,
+    90: 2880067194370816120
+  };
+
+  Object.keys(fibNums).forEach(function (key) {
+    it(`fib of ${key}`, function () {
+      expect(fib(key)).to.equal(fibNums[key]);
+    });
+  });
+});
+
+
+describe('isPalindrome', function () {
+  const palindromes = [
+    'madam',
+    'Racecar',
+    'Animal loots foliated detail of stool lamina',
+    'Red root put up to order'
+  ];
+
+  palindromes.forEach(function (str) {
+    it(`its "${str}" a palindrome?`, function () {
+      expect(isPalindrome(str)).to.be.true;
+    });
   });
 
-  it('fib of 55', function (){
-    expect(fib(55)).to.equal(139583862445);
-  });
-
-  it('fib of 90', function () {
-    expect(fib(90)).to.equal(2880067194370816120);
+  it('its "potato" a palindrome?', function () {
+    expect(isPalindrome('potato')).to.be.false;
   });
 });
