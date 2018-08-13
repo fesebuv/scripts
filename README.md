@@ -1,2 +1,2 @@
-# excercise
-excercise
+# scripts
+scripts
