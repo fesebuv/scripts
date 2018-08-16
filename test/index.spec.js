@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { fib, isPalindrome } = require('../src/');
+const { factorial, fib, isPalindrome } = require('../src/');
 
 describe('fibonacci test', function () {
   const fibNums = {
@@ -33,4 +33,27 @@ describe('isPalindrome', function () {
   it('its "potato" a palindrome?', function () {
     expect(isPalindrome('potato')).to.be.false;
   });
+});
+
+describe('factorial', function () {
+  it('0!', function () {
+    expect(factorial(0)).to.equal(1);
+  });
+
+  it('1!', function () {
+    expect(factorial(1)).to.equal(1);
+  });
+
+  it('5!', function () {
+    expect(factorial(5)).to.equal(120);
+  });
+
+  it('10!', function () {
+    expect(factorial(10)).to.equal(3628800);
+  });
+
+  it('12!', function () {
+    expect(factorial(12)).to.equal(479001600);
+  });
+
 });
