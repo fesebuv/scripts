@@ -7,11 +7,11 @@ const friends = {
 };
 
 function getTotals (names, input) {
-  input.split('').forEach(function (score) {
+  input.split('').forEach((score) => {
     const lower = score.toLowerCase();
-    if(names.hasOwnProperty(score)) {
+    if (names.hasOwnProperty(score)) {
       names[score]++;
-    } else if (friends.hasOwnProperty(lower)) {
+    } else if (names.hasOwnProperty(lower)) {
       names[lower]--;
     }
   });
@@ -39,7 +39,7 @@ function getOrderedObj(orderedTotal, indexObj, totals) {
       if(indexObj.hasOwnProperty(theKey)) {
         result[key] = totals[key];
       }
-    })
+    });
   });
   return result;
 }
