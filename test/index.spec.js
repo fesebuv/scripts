@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { factorial, fib, isPalindrome } = require('../src/');
+const { factorial, fib, isPalindrome, tally } = require('../src/');
 
 describe('fibonacci test', function () {
   const fibNums = {
@@ -57,3 +57,17 @@ describe('factorial', function () {
   });
 
 });
+
+describe('tally', function () {
+  const results = {
+    'dbbaCEDbdAacCEAadcB': { b:2, d:2, a:1, c:0, e:-2 },
+    'EbAAdbBEaBaaBBdAccbeebaec': { c:3, d:2, a:1, e:1, b:0 }
+  }
+
+  Object.keys(results).forEach((key) => {
+    it(`should return ordered tally for ${key}`, function () {
+      expect(tally(key)).to.deep.equal(results[key]);
+    });
+  });
+
+})
